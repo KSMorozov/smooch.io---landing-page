@@ -1,0 +1,22 @@
+/*
+ * Colors Theme:
+*/
+
+/*
+ * Variables
+*/
+
+/* Background */
+@value light-primary: #FAFAFA;
+@value primary: #F5F5F5;
+@value dark-primary: #EEE;
+@value accent: #92278f;
+@value accent2: #A92DA6;
+@value accent3: #ed217c;
+@value accent4: #fd2485;
+
+/* Text */
+@value primary-text: #424242;
+@value secondary-text: #757575;
+@value divider-text: #BDBDBD;
+@value accent-text: #FFF;

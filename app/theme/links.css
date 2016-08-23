@@ -1,0 +1,54 @@
+/*
+ * Import Colors Palette, Font-Size
+*/
+@value links-font-size, links-line-height from 'theme/typography.css';
+@value secondary-text, primary-text, accent2, accent, accent-text from 'theme/colors.css';
+
+/*
+ * Apply Global Link Styles
+*/
+:global a {
+  line-height: links-line-height;
+  transition: all 0.2s ease-out;
+  font-size: links-font-size;
+  color: primary-text;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  font-weight: 400;
+  outline: none;
+}
+
+:global a:hover {
+  color: accent;
+}
+
+:global a:focus {
+  color: primary-text;
+}
+
+:global .btn {
+  background-color: accent;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  color: accent-text;
+  padding: 1em 1.5em;
+  border-radius: 2px;
+  display: inline-block;
+}
+
+:global .btn:hover {
+  -webkit-transform: translateY(-6px) scale(1.02) perspective(1px);
+  transform: translateY(-6px) scale(1.02) perspective(1px);
+  box-shadow: 0 6px 8px 4px rgba(0, 0, 0, 0.12);
+  transition: all 0.3s ease;
+  color: accent-text;
+  background-color: accent2;
+}
+
+:global .btn:focus {
+  -webkit-transform: translateY(0) scale(1.02) perspective(0);
+  transform: translateY(0) scale(1.02) perspective(0);
+  box-shadow: none;
+  color: accent-text;
+}

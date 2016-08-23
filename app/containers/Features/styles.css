@@ -1,0 +1,74 @@
+@value primary-text, light-primary, secondary-text, highlight-text, accent-text, accent2 from 'theme/colors.css';
+
+.features {
+  background-color: light-primary;
+  padding: 96px 0;
+}
+
+.content {
+  composes: centered-responsive from 'theme/util.css';
+  text-align: center;
+
+  & h1 {
+    color: primary-text;
+    margin-bottom: 16px;
+  }
+
+  & p {
+    color: secondary-text;
+    margin: 0 auto;
+    margin-bottom: 12px;
+    display: block;
+    text-align: left;
+  }
+
+  & ul {
+    margin-top: 64px;
+    padding: 0;
+    list-style: none;
+
+    & li {
+      display: inline-block;
+      text-align: left;
+      padding: 0 4.15%;
+
+      & img {
+        margin-bottom: 30px;
+      }
+
+      & p:first-of-type {
+        text-align: left;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        color: highlight-text;
+        font-weight: 400;
+        margin-bottom: 12px;
+      }
+
+      & p:last-of-type {
+        text-align: left;
+      }
+    }
+  }
+
+  & a {
+    padding-bottom: 17px;
+    color: accent-text;
+    text-transform: none;
+  }
+
+  & a:hover {
+    box-shadow: none;
+    transform: none;
+  }
+}
+
+@media (min-width: 500px) {
+  .content {
+    composes: content;
+
+    & p {
+      text-align: center;
+    }
+  }
+}

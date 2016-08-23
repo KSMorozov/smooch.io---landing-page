@@ -1,0 +1,112 @@
+@value light-primary, primary-text, secondary-text from 'theme/colors.css';
+
+.backers {
+  background-color: light-primary;
+  padding: 85px 0;
+}
+
+.avatar {
+  height: 58px;
+  width: 58px;
+  float: left;
+  border-radius: 100%;
+  margin: 0;
+}
+
+.content {
+  composes: centered-responsive from 'theme/util.css';
+  text-align: center;
+
+  & h1 {
+    color: primary-text;
+    margin-bottom: 10px;
+  }
+
+  & p {
+    color: secondary-text;
+    letter-spacing: 0.04em;
+    font-weight: 300;
+    max-width: 45em;
+    margin: 0 auto 58px;
+    display: block;
+    text-align: left;
+  }
+
+  & ul:first-of-type {
+    padding: 23px 0;
+    list-style: none;
+
+    & li {
+      margin: 0 0 30px;
+      padding: 0 1.5%;
+    }
+  }
+
+  & ul:last-of-type {
+    display: block;
+    padding: 0 0 54px;
+    list-style: none;
+    text-align: justify;
+
+    & li {
+      display: inline-block;
+      width: 100%;
+      padding: 10px 0 0;
+      vertical-align: top;
+
+      & blockquote {
+        color: secondary-text;
+        font-style: italic;
+        overflow: hidden;
+        margin: 0;
+        padding: 0 40px 0 15px;
+        text-align: left;
+        letter-spacing: 0.03em;
+
+        & q {
+          display: inline;
+          font-weight: 300;
+          line-height: 25px;
+        }
+
+        & cite {
+          display: inline-block;
+          font-weight: 300;
+          line-height: 25px;
+        }
+
+        & div img {
+          padding: 13px 0;
+        }
+      }
+
+      & blockquote div .front {
+        height: 200px !important;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .content {
+    composes: content;
+
+    & ul:last-of-type li {
+      width: 32%;
+    }
+  }
+
+  .avatar {
+    composes: avatar;
+    float: none;
+    margin: 0 40px 0 15px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .avatar {
+    composes: avatar;
+    float: left;
+    margin: 0;
+  }
+}

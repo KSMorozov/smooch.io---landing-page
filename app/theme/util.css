@@ -1,0 +1,40 @@
+/*
+ * Centered "Container class" to center block element.
+*/
+
+.centered-responsive {
+  width: 95%;
+  margin: 0 auto;
+}
+
+@media (min-width: 640px) {
+  .centered-responsive {
+    width: 90%;
+  }
+}
+
+@media (min-width: 1600px) {
+  .centered-responsive {
+    width: 70%;
+  }
+}
+
+.small-hidden {
+  display: none !important;
+}
+
+@media (min-width: 768px) {
+  .small-hidden {
+    display: block !important;
+  }
+}
+
+.small-visible {
+  display: block !important;
+}
+
+@media (min-width: 768px) {
+  .small-visible {
+    display: none !important;
+  }
+}

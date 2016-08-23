@@ -1,9 +1,30 @@
-/**
- * styles.css
- *
- * App container styles
- */
+/*
+ * Sticky Header
+ * Full Height Content
+ * Sticky Footer
+*/
+:global html,
+:global body,
+:global #app {
+  height: 100%;
+}
 
-.container {
-  display: block;
+.wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/*
+ * Font backup
+*/
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+/*
+ * Font main
+*/
+body.fontLoaded {
+  font-family: Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }

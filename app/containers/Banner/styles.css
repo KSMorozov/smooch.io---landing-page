@@ -1,0 +1,27 @@
+@value primary, primary-text, secondary-text from 'theme/colors.css';
+
+.banner {
+  background-color: primary;
+  padding: 60px 0;
+}
+
+.content {
+  composes: centered-responsive from 'theme/util.css';
+  text-align: center;
+
+  & h1 {
+    margin-bottom: 15px;
+    color: primary-text;
+  }
+
+  & h2 {
+    margin-bottom: 30px;
+    color: secondary-text;
+  }
+
+  & img {
+    width: 100%;
+    max-width: 1023px;
+    margin: 0 auto;
+  }
+}

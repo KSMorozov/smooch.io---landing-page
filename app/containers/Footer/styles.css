@@ -1,0 +1,76 @@
+@value primary-text, light-primary, secondary-text, accent from 'theme/colors.css';
+
+.footer {
+  /*
+   * Sticky Header
+   * Full Height Content
+   * Sticky Footer
+  */
+  flex: none;
+  flex-shrink: 0;
+  background-color: light-primary;
+  padding: 62px 0 25px;
+}
+
+.content {
+  composes: centered-responsive from 'theme/util.css';
+  text-align: left;
+
+  & section:first-of-type {
+    padding: 0;
+    text-align: center;
+
+    & a img {
+      margin-bottom: 14px;
+    }
+
+    & p {
+      margin: 0 auto 1em;
+      color: secondary-text;
+    }
+  }
+
+  & section {
+    margin: 0 0 15px;
+    padding: 0 0 0 15px;
+
+    & h4 {
+      text-transform: uppercase;
+      margin: 0 0 7px;
+      color: primary-text;
+      line-height: 22px;
+      font-weight: 500;
+    }
+
+    & ul {
+      list-style: none;
+      padding: 0;
+
+      & li {
+        margin: 0 0 7px;
+
+        & a {
+          color: secondary-text;
+        }
+
+        & a:hover {
+          color: accent;
+        }
+
+        & a:focus {
+          color: secondary-text;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .content {
+    composes: content;
+
+    & section:first-of-type {
+      text-align: left;
+    }
+  }
+}

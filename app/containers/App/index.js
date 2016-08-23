@@ -12,8 +12,13 @@
  */
 
 import React from 'react';
+import Header from 'containers/Header';
+import Footer from 'containers/Footer';
 
-import styles from './styles.css';
+import typography from 'theme/typography.css'; // eslint-disable-line no-unused-vars
+import styles from './styles.css'; // eslint-disable-line no-unused-vars
+import links from 'theme/links.css'; // eslint-disable-line no-unused-vars
+import misc from 'theme/misc.css'; // eslint-disable-line no-unused-vars
 
 export default class App extends React.Component { // eslint-disable-line react/prefer-stateless-function
 
@@ -23,8 +28,10 @@ export default class App extends React.Component { // eslint-disable-line react/
 
   render() {
     return (
-      <div className={styles.container}>
+      <div className={styles.wrapper}>
+        <Header />
         {React.Children.toArray(this.props.children)}
+        <Footer />
       </div>
     );
   }

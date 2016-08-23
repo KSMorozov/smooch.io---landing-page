@@ -1,0 +1,24 @@
+@value accent, accent3,  accent4, accent-text from 'theme/colors.css';
+
+.calltoaction {
+  background: accent;
+  padding: 96px 0;
+}
+
+.content {
+  composes: centered-responsive from 'theme/util.css';
+  text-align: center;
+
+  & h1 {
+    margin-bottom: 46px;
+    color: accent-text;
+  }
+
+  & section a {
+    background-color: accent3;
+  }
+
+  & section a:hover {
+    background-color: accent4;
+  }
+}

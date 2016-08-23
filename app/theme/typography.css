@@ -1,0 +1,109 @@
+@value primary-text-color from 'theme/colors.css';
+/*
+ * Font Size, Line Height Variables
+*/
+@value normal-font-size: 0.875em;
+@value normal-line-height: 1.5625em;
+@value links-font-size: 1.225em;
+@value links-line-height: 1.325em;
+
+:global html,
+:global body {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: normal-line-height;
+  -webkit-text-size-adjust: 100%;
+  font-size: normal-font-size;
+  font-weight: 400;
+  color: primary-text-color;
+}
+
+:global h1,
+:global h2,
+:global h3,
+:global h4,
+:global h5,
+:global p {
+  margin: 0;
+  padding: 0;
+}
+
+:global .columns {
+  padding: 0;
+}
+
+:global .text-body {
+  line-height: normal-line-height;
+  font-size: normal-font-size;
+  font-weight: 300;
+}
+
+:global p {
+  /* max-width between 22.5em and 37.5em. */
+  font-weight: 300;
+  max-width: 37.5em;
+  margin: 0.5em 0;
+}
+
+:global .text-display-4 {
+  font-size: 112px;
+  font-weight: 300;
+  line-height: 128px;
+  letter-spacing: -5px;
+}
+
+:global .text-display-3 {
+  font-size: 56px;
+  font-weight: 400;
+  line-height: 64px;
+}
+
+:global .text-display-2 {
+  font-size: 45px;
+  font-weight: 400;
+  line-height: 64px;
+}
+
+:global .text-display-1 {
+  font-size: 34px;
+  font-weight: 400;
+  line-height: 52px;
+}
+
+:global .text-headline {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 44px;
+}
+
+:global .text-title {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 44px;
+}
+
+:global .text-subhead {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 32px;
+}
+
+:global .text-caption {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 32px;
+}
+
+:global .text-menu {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 32px;
+}
+
+:global .text-button {
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 600;
+  line-height: 32px;
+}

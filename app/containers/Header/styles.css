@@ -1,0 +1,259 @@
+:root {
+  --header-height: 100px;
+  --holder-height: 70px;
+  --logo-height: 30px;
+  --logo-width: 140px;
+  --link-font-size: 15px;
+}
+
+@value accent-text, divider-text, primary, accent, light-primary
+  from 'theme/colors.css';
+
+.header {
+  /*
+   * Sticky Header
+   * Full Height Content
+   * Sticky Footer
+  */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  flex: none;
+  flex-shrink: 0;
+  transition: all 0.2s ease-out;
+  box-shadow: thin-border-bottom;
+  z-index: 1000;
+
+  /* Apply Background style */
+  background-color: light-primary;
+
+  /*
+   * Applying Header Height, Vertically centering Header Holder
+  */
+  height: var(--header-height);
+  padding: calc(calc(var(--header-height) - var(--holder-height)) / 2) 0;
+}
+
+.mobileheader {
+  background-color: accent;
+  opacity: 0.993;
+  height: 100%;
+}
+
+.header_holder {
+  /*
+   * Applying Header Holder Height, Horizontally centering Header Holder responsive way
+  */
+  composes: centered-responsive from 'theme/util.css';
+  height: var(--holder-height);
+}
+
+.logo_holder {
+  /*
+   * Scaling Logo Holder to 100% Height, Vertically centering logo, Float to the Left
+  */
+  height: 100%;
+  float: left;
+  padding: calc(calc(var(--holder-height) - var(--logo-height)) / 2) 0;
+
+  /*
+   * Applying Height and Width to the Logo.
+  */
+  & a {
+    & img {
+      height: var(--logo-height);
+      width: var(--logo-width);
+    }
+  }
+}
+
+.menu_holder {
+  /*
+   * Hide Menu on Small Screens
+  */
+  composes: small-hidden from 'theme/util.css';
+
+  /*
+   * Scaling Menu Holder to 100% Height, Float to the Right
+  */
+  height: 100%;
+  float: right;
+
+  /*
+   * Scaling ul to 100% Height, Reset List Styling, margin, padding
+  */
+  & ul {
+    list-style: none;
+    padding: 0;
+    height: 100%;
+    margin: 0;
+
+    /*
+     * Scaling li to 100% Height, Float items left
+    */
+    & li {
+      height: 100%;
+      float: left;
+
+      & a {
+        /*
+         * Add Spacing Between Links, Set Default Link Color
+        */
+        display: inline-block;
+        padding: calc(calc(var(--holder-height) - var(--link-font-size)) / 2) 10px;
+        height: 100%;
+      }
+    }
+  }
+}
+
+.mobile_menu_holder {
+  display: none;
+  position: fixed;
+  top: 100px;
+  left: 0;
+  height: 100%;
+  width: 100%;
+
+  & ul {
+    position: fixed;
+    top: 25%;
+    height: 50%;
+    width: 100%;
+    list-style: none;
+    display: block;
+    padding: 0;
+    margin: 0;
+
+    /*
+     * Scaling li to 100% Height, Float items left
+    */
+    & li {
+      width: 100%;
+      float: left;
+      text-align: center;
+
+      & a {
+        /*
+         * Add Spacing Between Links, Set Default Link Color
+        */
+        display: inline-block;
+        padding: calc(calc(var(--holder-height) - var(--link-font-size)) / 2) 10px;
+        height: 100%;
+        color: accent-text;
+      }
+
+      & a:hover {
+        color: divider-text;
+      }
+    }
+  }
+}
+
+.show_mobile_menu_holder {
+  display: block;
+}
+
+.hamburger {
+  /*
+   * Show Hamburger on Small Screens
+   * FANCY ANIMATED HAMBURGER STYLES.
+  */
+  composes: small-visible from 'theme/util.css';
+  padding: calc(calc(var(--holder-height) - var(--logo-height)) / 2) 0;
+  display: inline-block;
+  transition-property: opacity, -webkit-filter;
+  transition-property: opacity, filter;
+  transition-property: opacity, filter, -webkit-filter;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+  text-transform: none;
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  overflow: visible;
+  float: right;
+  outline: none;
+}
+
+.box {
+  width: 40px;
+  height: var(--logo-height);
+  display: inline-block;
+  position: relative;
+}
+
+.inner {
+  display: block;
+  top: 50%;
+  margin-top: -2px;
+  transition-duration: 0.3s;
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.inner,
+.inner::before,
+.inner::after {
+  width: 40px;
+  height: 5px;
+  background-color: accent;
+  border-radius: 1px;
+  position: absolute;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+}
+
+.inner::before,
+.inner::after {
+  content: '';
+  display: block;
+}
+
+.inner::before {
+  top: -10px;
+  transition: top 0.1s 0.34s ease-in, opacity 0.1s ease-in;
+}
+
+.inner::after {
+  bottom: -10px;
+  transition: bottom 0.1s 0.34s ease-in, -webkit-transform 0.3s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  transition: bottom 0.1s 0.34s ease-in, transform 0.3s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  transition: bottom 0.1s 0.34s ease-in, transform 0.3s cubic-bezier(0.55, 0.055, 0.675, 0.19), -webkit-transform 0.3s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.isactive .inner {
+  -webkit-transform: rotate(225deg);
+  transform: rotate(225deg);
+  transition-delay: 0.14s;
+  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.isactive .inner::before {
+  top: 0;
+  opacity: 0;
+  transition: top 0.1s ease-out, opacity 0.1s 0.14s ease-out;
+}
+
+.isactive .inner::after {
+  bottom: 0;
+  -webkit-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  transition: bottom 0.1s ease-out, -webkit-transform 0.3s 0.14s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: bottom 0.1s ease-out, transform 0.3s 0.14s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: bottom 0.1s ease-out, transform 0.3s 0.14s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 0.3s 0.14s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.isactive .inner,
+.isactive .inner::after {
+  transition: all 0.2s ease-out;
+  background-color: accent-text;
+}
+
+.isactive:hover .inner,
+.isactive:hover .inner::after {
+  background-color: divider-text;
+}
